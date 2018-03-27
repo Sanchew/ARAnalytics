@@ -5,13 +5,13 @@ Pod::Spec.new do |s|
   s.homepage     =  'https://github.com/orta/ARAnalytics'
   s.authors      =  { 'orta' => 'orta.therox@gmail.com', 'Daniel Haight' => "confidence.designed@gmail.com" }
   s.source       =  { :git => 'https://github.com/orta/ARAnalytics.git', :tag => s.version.to_s }
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "8.0"
   s.social_media_url = "https://twitter.com/orta"
   s.summary      =  'Using subspecs you can define your analytics provider with the same API on iOS.'
   # s.description is at the bottom as it is partially generated.
 
-  appsflyer        = { :spec_name => "AppsFlyer",           :vendored_frameworks => "AppsFlyerFramework-4.7.2/AppsFlyerLib.framework" }
-  firebase         = { :spec_name => "Firebase",            :dependency => "Firebase" }
+  appsflyer        = { :spec_name => "AppsFlyer",       :vendored_frameworks => "AppsFlyerFramework-4.7.2/AppsFlyerLib.framework" }
+  firebase         = { :spec_name => "Firebase",        :dependency => "Firebase" }
   google           = { :spec_name => "GoogleAnalytics", :vendored_libraries => "GoogleAnalytics-3.17.0/Libraries/libGoogleAnalytics.a", :source_files => "GoogleAnalytics-3.17.0/Sources/*.h", :frameworks => [
     "CoreData",
     "SystemConfiguration"
@@ -20,11 +20,10 @@ Pod::Spec.new do |s|
     "z",
     "sqlite3"
   ],       :has_extension => true }
-  dumplings         = { :spec_name => "Dumplings", :vendored_frameworks => "DumplingsTracker-1.1.0/DumplingsTracker.framework" }
-  # dumplings         = { :spec_name => "Dumplings", :source_files => "DumplingsTracker/*.{h,m}", :requires_arc => false }
   facebook          = { :spec_name => "Facebook", :dependency => "FBSDKCoreKit" }
+  sensors          = { :spec_name => "SenSors",         :dependency => "SensorsAnalyticsSDK", :subspecs => ['IDFA']  }
 
-  all_analytics = [appsflyer, firebase, google, dumplings, facebook]
+  all_analytics = [appsflyer, firebase, google, facebook]
   spec_keys = [:dependency, :source, :source_files, :vendored_libraries, :frameworks, :libraries]
 
   # To make the pod spec API cleaner, subspecs are "iOS/KISSmetrics"
@@ -33,15 +32,15 @@ Pod::Spec.new do |s|
     ss.source_files = ['*.{h,m}', 'Providers/ARAnalyticalProvider.{h,m}', 'Providers/ARAnalyticsProviders.h']
     ss.exclude_files = ['ARDSL.{h,m}']
     ss.private_header_files = 'ARNavigationControllerDelegateProxy.h'
-    ss.ios.deployment_target = '7.0'
+    ss.ios.deployment_target = '8.0'
     ss.frameworks = 'UIKit'
   end
 
-  # s.subspec "DSL" do |ss|
-  #   ss.source_files = ['ARDSL.{h,m}']
-  #   ss.dependency 'RSSwizzle', '~> 0.1.0'
-  #   ss.dependency 'ReactiveCocoa', '~> 2.0'
-  # end
+  s.subspec "DSL" do |ss|
+    ss.source_files = ['ARDSL.{h,m}']
+    ss.dependency 'RSSwizzle', '~> 0.1.0'
+    ss.dependency 'ReactiveCocoa', '~> 2.0'
+  end
 
   # for the description
   all_ios_names = []
