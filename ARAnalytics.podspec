@@ -6,6 +6,7 @@ Pod::Spec.new do |s|
   s.authors      =  { 'orta' => 'orta.therox@gmail.com', 'Daniel Haight' => "confidence.designed@gmail.com" }
   s.source       =  { :git => 'https://github.com/orta/ARAnalytics.git', :tag => s.version.to_s }
   s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.7"
   s.social_media_url = "https://twitter.com/orta"
   s.summary      =  'Using subspecs you can define your analytics provider with the same API on iOS.'
   # s.description is at the bottom as it is partially generated.
@@ -58,10 +59,10 @@ Pod::Spec.new do |s|
   parseAnalytics_mac = { :spec_name => "ParseAnalyticsOSX", :dependency => "Parse",             :osx => true,  :provider => "ParseAnalytics", :has_extension => true }
 
   facebook          = { :spec_name => "Facebook", :dependency => "FBSDKCoreKit" }
-  sensors          = { :spec_name => "SenSors",         :dependency => "SensorsAnalyticsSDK", :subspecs => ['IDFA']  }
+  sensors          = { :spec_name => "SenSors",         :dependency => ["SensorsAnalyticsSDK", :subspecs => ['IDFA']] }
 
   all_analytics = [facebook, mixpanel, localytics, flurry, google, kissmetrics, crittercism, crashlytics, fabric, bugsnag, countly, helpshift, kissmetrics_mac, mixpanel_mac, tapstream, newRelic, amplitude, hockeyApp, hockeyAppLib, hockeyApp_mac, parseAnalytics, parseAnalytics_mac, heap, chartbeat, umeng, librato, segmentio, swrve, yandex, adjust, appsflyer, branch, snowplow, sentry, intercom, keen, adobe, installtracker, appsee, mobileapptracker, launchkit, firebase, leanplum, appboy, facebook, sensors]
-  
+
   spec_keys = [:dependency, :source, :source_files, :vendored_libraries, :frameworks, :libraries]
 
   # To make the pod spec API cleaner, subspecs are "iOS/KISSmetrics"
@@ -70,13 +71,8 @@ Pod::Spec.new do |s|
     ss.source_files = ['*.{h,m}', 'Providers/ARAnalyticalProvider.{h,m}', 'Providers/ARAnalyticsProviders.h']
     ss.exclude_files = ['ARDSL.{h,m}']
     ss.private_header_files = 'ARNavigationControllerDelegateProxy.h'
-<<<<<<< HEAD
-    ss.ios.deployment_target = '8.0'
-    ss.frameworks = 'UIKit'
-=======
     ss.tvos.deployment_target = '9.0'
 	  ss.ios.deployment_target = '8.0'
->>>>>>> 888744016bb4f53ad5b652819406645bd21f80c7
   end
 
   s.subspec "DSL" do |ss|
@@ -128,7 +124,7 @@ Pod::Spec.new do |s|
 
       if analytics_spec[:requires_arc]
         ss.requires_arc = analytics_spec[:requires_arc]
-	ss.complier_flags = '-fno-objc-arc'
+	     ss.complier_flags = '-fno-objc-arc'
       end
 
       if analytics_spec[:source]
