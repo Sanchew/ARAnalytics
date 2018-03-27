@@ -2,8 +2,20 @@
 
 ## Master
 
+## Version 5.0.1
+
+* Updated AppsFlyer cocoapods dependance to use newer version of framework (@starikovvm)
+
+## Version 5.0.0
+
+* Use ReactiveObjC instead of ReactiveCocoa in DSL - orta/DinosaurDad
+* Drop iOS 7 support - orta/DinosaurDad
+
+## Version 4.0.2
+
 * Allows AdjustProvider to be set up with an AdjustDelegate
 * Support custom event tracking for HockeyApp provider (@wzs)
+* Don’t dispatch DSL blocks if view controller has been deallocated in the mean time (@alloy)
 
 ## Version 4.0.1
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29B61D5400D08B8C1F19CA5F /* libPods-ARAnalyticsiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9B7BEB5AF2EE8C6DA4EA7 /* libPods-ARAnalyticsiOSTests.a */; };
 		5E0E7BCF1913D57400DA982C /* ARAnalyticsDSLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E7BCE1913D57400DA982C /* ARAnalyticsDSLTests.m */; };
 		603AE9F318E1AE49004AEBF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603AE9F218E1AE49004AEBF8 /* XCTest.framework */; };
 		603AE9F418E1AE49004AEBF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A5E6121698DB4400686918 /* Foundation.framework */; };
@@ -32,7 +33,8 @@
 		60FF26851749771E005F8435 /* ORAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FF26841749771E005F8435 /* ORAppDelegate.m */; };
 		60FF26881749771F005F8435 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FF26861749771F005F8435 /* MainMenu.xib */; };
 		60FF268D17498318005F8435 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF268C17498318005F8435 /* Security.framework */; };
-		90E733EF1492E698319B2431 /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3556DBEC90AC961118C31ED8 /* libPods-ARAnalyticsBootstrapiOS.a */; };
+		79239FD55ED2750012FE27A3 /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E35DBF72B638BE973C9049 /* libPods-ARAnalyticsBootstrapiOS.a */; };
+		9C45E7644D654CB2A4940A18 /* libPods-ARAnalyticsiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAA2082A04DABA4E2599A /* libPods-ARAnalyticsiOSTests.a */; };
 		A2750F25723A4344992E231B /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA562281B834E738D18B40A /* libPods-ARAnalyticsBootstrapiOS.a */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +50,8 @@
 
 /* Begin PBXFileReference section */
 		098BAA2082A04DABA4E2599A /* libPods-ARAnalyticsiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3556DBEC90AC961118C31ED8 /* libPods-ARAnalyticsBootstrapiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		11CF516674AC2BCFAA067061 /* Pods-ARAnalyticsiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAnalyticsiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARAnalyticsiOSTests/Pods-ARAnalyticsiOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		38E35DBF72B638BE973C9049 /* libPods-ARAnalyticsBootstrapiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA562281B834E738D18B40A /* libPods-ARAnalyticsBootstrapiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0E7BCE1913D57400DA982C /* ARAnalyticsDSLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAnalyticsDSLTests.m; sourceTree = "<group>"; };
 		603AE9F118E1AE49004AEBF8 /* ARAnalyticsiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARAnalyticsiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,7 @@
 		60FF26871749771F005F8435 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		60FF268C17498318005F8435 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B30A82DFC7B4673C53BE834E /* Pods-ARAnalyticsBootstrapiOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAnalyticsBootstrapiOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARAnalyticsBootstrapiOS/Pods-ARAnalyticsBootstrapiOS.release.xcconfig"; sourceTree = "<group>"; };
+		C5A9B7BEB5AF2EE8C6DA4EA7 /* libPods-ARAnalyticsiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C95C4F94D6FA85E08D83B3 /* Pods-ARAnalyticsBootstrapiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAnalyticsBootstrapiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARAnalyticsBootstrapiOS/Pods-ARAnalyticsBootstrapiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DBFC8EEA18444170B5070ED6 /* libPods-ARAnalyticsBootstrapMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -106,6 +110,8 @@
 				603AE9F318E1AE49004AEBF8 /* XCTest.framework in Frameworks */,
 				603AE9F518E1AE49004AEBF8 /* UIKit.framework in Frameworks */,
 				603AE9F418E1AE49004AEBF8 /* Foundation.framework in Frameworks */,
+				9C45E7644D654CB2A4940A18 /* libPods-ARAnalyticsiOSTests.a in Frameworks */,
+				29B61D5400D08B8C1F19CA5F /* libPods-ARAnalyticsiOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +124,7 @@
 				60A5E6131698DB4400686918 /* Foundation.framework in Frameworks */,
 				60A5E6151698DB4400686918 /* CoreGraphics.framework in Frameworks */,
 				A2750F25723A4344992E231B /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */,
-				90E733EF1492E698319B2431 /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */,
+				79239FD55ED2750012FE27A3 /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +285,8 @@
 		D78072DB556C738165B84642 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3556DBEC90AC961118C31ED8 /* libPods-ARAnalyticsBootstrapiOS.a */,
+				38E35DBF72B638BE973C9049 /* libPods-ARAnalyticsBootstrapiOS.a */,
+				C5A9B7BEB5AF2EE8C6DA4EA7 /* libPods-ARAnalyticsiOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,10 +298,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 603AEA0118E1AE49004AEBF8 /* Build configuration list for PBXNativeTarget "ARAnalyticsiOSTests" */;
 			buildPhases = (
+				4CB1B204D91C48519EEF2887 /* [CP] Check Pods Manifest.lock */,
 				603AE9ED18E1AE49004AEBF8 /* Sources */,
 				603AE9EE18E1AE49004AEBF8 /* Frameworks */,
 				603AE9EF18E1AE49004AEBF8 /* Resources */,
+				E4BEF1165C524989BBDA92C0 /* [CP] Copy Pods Resources */,
 				A8FD6CFF3374464C9B2524FB /* Upload Bugsnag dSYM */,
+				520C24B7570F51A1F0E0C2FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -310,16 +320,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60A5E6301698DB4400686918 /* Build configuration list for PBXNativeTarget "ARAnalyticsBootstrapiOS" */;
 			buildPhases = (
-				2F861E4D1E5B576998A86126 /* [CP] Check Pods Manifest.lock */,
-				07CB854EAA93403EB45192CE /* Check Pods Manifest.lock */,
+				07CB854EAA93403EB45192CE /* [CP] Check Pods Manifest.lock */,
 				60A5E6091698DB4400686918 /* Sources */,
 				60A5E60A1698DB4400686918 /* Frameworks */,
 				60A5E60B1698DB4400686918 /* Resources */,
-				B1A4DB6A8957418F8287D04E /* Copy Pods Resources */,
+				B1A4DB6A8957418F8287D04E /* [CP] Copy Pods Resources */,
 				B4FD8B0A43374393B7308167 /* Upload Bugsnag dSYM */,
-				6137A38A286225CF675B10E5 /* Embed Pods Frameworks */,
-				EA4C57DB6A3A5559A6B869C2 /* [CP] Embed Pods Frameworks */,
-				17536C26FA9D515D99941AFF /* [CP] Copy Pods Resources */,
+				6137A38A286225CF675B10E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,36 +423,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		07CB854EAA93403EB45192CE /* Check Pods Manifest.lock */ = {
+		07CB854EAA93403EB45192CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 		};
-		17536C26FA9D515D99941AFF /* [CP] Copy Pods Resources */ = {
+		4CB1B204D91C48519EEF2887 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARAnalyticsBootstrapiOS/Pods-ARAnalyticsBootstrapiOS-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2F861E4D1E5B576998A86126 /* [CP] Check Pods Manifest.lock */ = {
+		520C24B7570F51A1F0E0C2FD /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -454,7 +461,7 @@
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ARAnalyticsBootstrapiOS-checkManifestLockResult.txt",
 			);
@@ -463,14 +470,14 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6137A38A286225CF675B10E5 /* Embed Pods Frameworks */ = {
+		6137A38A286225CF675B10E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,14 +515,14 @@
 			shellScript = "\nif ENV[\"DEBUG_INFORMATION_FORMAT\"] != \"dwarf-with-dsym\" or ENV[\"PLATFORM_NAME\"] == \"iphonesimulator\"\n  exit\nend\n\nfork do\n  Process.setsid\n  STDIN.reopen(\"/dev/null\")\n  STDOUT.reopen(\"/dev/null\", \"a\")\n  STDERR.reopen(\"/dev/null\", \"a\")\n\n  require 'shellwords'\n\n  Dir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/#{ENV[\"DWARF_DSYM_FILE_NAME\"]}/Contents/Resources/DWARF/*\"].each do |dsym|\n    system(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} https://upload.bugsnag.com/\")\n  end\nend\n";
 			showEnvVarsInLog = 0;
 		};
-		B1A4DB6A8957418F8287D04E /* Copy Pods Resources */ = {
+		B1A4DB6A8957418F8287D04E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,19 +544,19 @@
 			shellScript = "\nif ENV[\"DEBUG_INFORMATION_FORMAT\"] != \"dwarf-with-dsym\" or ENV[\"PLATFORM_NAME\"] == \"iphonesimulator\"\n  exit\nend\n\nfork do\n  Process.setsid\n  STDIN.reopen(\"/dev/null\")\n  STDOUT.reopen(\"/dev/null\", \"a\")\n  STDERR.reopen(\"/dev/null\", \"a\")\n\n  require 'shellwords'\n\n  Dir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/#{ENV[\"DWARF_DSYM_FILE_NAME\"]}/Contents/Resources/DWARF/*\"].each do |dsym|\n    system(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} https://upload.bugsnag.com/\")\n  end\nend\n";
 			showEnvVarsInLog = 0;
 		};
-		EA4C57DB6A3A5559A6B869C2 /* [CP] Embed Pods Frameworks */ = {
+		E4BEF1165C524989BBDA92C0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARAnalyticsBootstrapiOS/Pods-ARAnalyticsBootstrapiOS-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARAnalyticsiOSTests/Pods-ARAnalyticsiOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -672,7 +679,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ARAnalyticsiOSTests/ARAnalyticsiOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -701,7 +708,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				INFOPLIST_FILE = "ARAnalyticsiOSTests/ARAnalyticsiOSTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -775,7 +782,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARAnalyticsTests/ARAnalyticsTests-Prefix.pch";
 				INFOPLIST_FILE = "ARAnalyticsTests/ARAnalyticsTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -792,7 +799,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ARAnalyticsTests/ARAnalyticsTests-Prefix.pch";
 				INFOPLIST_FILE = "ARAnalyticsTests/ARAnalyticsTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

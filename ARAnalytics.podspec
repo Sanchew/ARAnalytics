@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         =  'ARAnalytics'
-  s.version      =  '4.0.2'
+  s.version      =  '5.0.1'
   s.license      =  {:type => 'MIT', :file => 'LICENSE' }
   s.homepage     =  'https://github.com/orta/ARAnalytics'
   s.authors      =  { 'orta' => 'orta.therox@gmail.com', 'Daniel Haight' => "confidence.designed@gmail.com" }
@@ -10,20 +10,58 @@ Pod::Spec.new do |s|
   s.summary      =  'Using subspecs you can define your analytics provider with the same API on iOS.'
   # s.description is at the bottom as it is partially generated.
 
-  appsflyer        = { :spec_name => "AppsFlyer",       :vendored_frameworks => "AppsFlyerFramework-4.7.2/AppsFlyerLib.framework" }
-  firebase         = { :spec_name => "Firebase",        :dependency => "Firebase" }
-  google           = { :spec_name => "GoogleAnalytics", :vendored_libraries => "GoogleAnalytics-3.17.0/Libraries/libGoogleAnalytics.a", :source_files => "GoogleAnalytics-3.17.0/Sources/*.h", :frameworks => [
-    "CoreData",
-    "SystemConfiguration"
-  ],
-  :libraries => [
-    "z",
-    "sqlite3"
-  ],       :has_extension => true }
+
+  mixpanel         = { :spec_name => "Mixpanel",            :dependency => "Mixpanel" }
+  localytics       = { :spec_name => "Localytics",          :dependency => "Localytics",            :ios_deployment_target => "8.0" }
+  flurry           = { :spec_name => "Flurry",              :dependency => "Flurry-iOS-SDK" }
+  google           = { :spec_name => "GoogleAnalytics",     :dependency => "GoogleAnalytics",       :has_extension => true }
+  kissmetrics      = { :spec_name => "KISSmetrics",         :dependency => "KISSmetrics" }
+  crittercism      = { :spec_name => "Crittercism",         :dependency => "CrittercismSDK" }
+  countly          = { :spec_name => "Countly",             :dependency => "Countly" }
+  bugsnag          = { :spec_name => "Bugsnag",             :dependency => "Bugsnag" }
+  helpshift        = { :spec_name => "Helpshift",           :dependency => "Helpshift" }
+  tapstream        = { :spec_name => "Tapstream",           :dependency => "Tapstream" }
+  newRelic         = { :spec_name => "NewRelic",            :dependency => "NewRelicAgent" }
+  amplitude        = { :spec_name => "Amplitude",           :dependency => "Amplitude-iOS" }
+  hockeyApp        = { :spec_name => "HockeyApp",           :dependency => "HockeySDK-Source" }
+  hockeyAppLib     = { :spec_name => "HockeyAppLib",        :dependency => "HockeySDK" }
+  parseAnalytics   = { :spec_name => "ParseAnalytics",      :dependency => "Parse",                 :has_extension => true }
+  heap             = { :spec_name => "HeapAnalytics",       :dependency => "Heap" }
+  chartbeat        = { :spec_name => "Chartbeat",           :dependency => "Chartbeat",             :has_extension => true }
+  umeng            = { :spec_name => "UMengAnalytics",      :dependency => "UMengAnalytics" }
+  segmentio        = { :spec_name => "Segmentio",           :dependency => [["Analytics", ">= 3"]], :tvos => true}
+  swrve            = { :spec_name => "Swrve",               :dependency => "SwrveSDK" }
+  yandex           = { :spec_name => "YandexMobileMetrica", :dependency => "YandexMobileMetrica" }
+  adjust           = { :spec_name => "Adjust",              :dependency => "Adjust" }
+  intercom         = { :spec_name => "Intercom",            :dependency => "Intercom",              :ios_deployment_target => "8.0" }
+  librato          = { :spec_name => "Librato" }
+  crashlytics      = { :spec_name => "Crashlytics",         :dependency => "Crashlytics" }
+  fabric           = { :spec_name => "Fabric",              :dependency => ["Fabric", "Crashlytics"] }
+  appsflyer        = { :spec_name => "AppsFlyer",           :dependency => "AppsFlyerFramework" }
+  branch           = { :spec_name => "Branch",              :dependency => "Branch" }
+  snowplow         = { :spec_name => "Snowplow",            :dependency => "SnowplowTracker" }
+  sentry           = { :spec_name => "Sentry",              :dependency => "Raven" }
+  keen             = { :spec_name => "Keen",                :dependency => "KeenClient" }
+  adobe            = { :spec_name => "Adobe",               :dependency => "AdobeMobileSDK" }
+  installtracker   = { :spec_name => "InstallTracker",      :dependency => "InstallTracker"}
+  appsee           = { :spec_name => "Appsee",              :dependency => "Appsee" }
+  mobileapptracker = { :spec_name => "MobileAppTracker",    :dependency => "MobileAppTracker"}
+  launchkit        = { :spec_name => "LaunchKit",           :dependency => "LaunchKit" }
+  firebase         = { :spec_name => "Firebase",            :dependency => "Firebase/Core" }
+  leanplum         = { :spec_name => "Leanplum",            :dependency => "Leanplum-iOS-SDK"}
+  appboy           = { :spec_name => "Appboy",              :dependency => "Appboy-iOS-SDK"}
+
+  kissmetrics_mac = { :spec_name => "KISSmetricsOSX",  :dependency => "KISSmetrics",            :osx => true,  :provider => "KISSmetrics" }
+# countly_mac     = { :spec_name => "CountlyOSX",      :dependency => "Countly",                :osx => true,  :provider => "Countly" }
+  mixpanel_mac    = { :spec_name => "MixpanelOSX",     :dependency => "Mixpanel-OSX-Community", :osx => true,  :provider => "Mixpanel"}
+  hockeyApp_mac   = { :spec_name => "HockeyAppOSX",    :dependency => "HockeySDK-Mac",          :osx => true,  :provider => "HockeyAppOSX"}
+  parseAnalytics_mac = { :spec_name => "ParseAnalyticsOSX", :dependency => "Parse",             :osx => true,  :provider => "ParseAnalytics", :has_extension => true }
+
   facebook          = { :spec_name => "Facebook", :dependency => "FBSDKCoreKit" }
   sensors          = { :spec_name => "SenSors",         :dependency => "SensorsAnalyticsSDK", :subspecs => ['IDFA']  }
 
-  all_analytics = [appsflyer, firebase, google, facebook]
+  all_analytics = [facebook, mixpanel, localytics, flurry, google, kissmetrics, crittercism, crashlytics, fabric, bugsnag, countly, helpshift, kissmetrics_mac, mixpanel_mac, tapstream, newRelic, amplitude, hockeyApp, hockeyAppLib, hockeyApp_mac, parseAnalytics, parseAnalytics_mac, heap, chartbeat, umeng, librato, segmentio, swrve, yandex, adjust, appsflyer, branch, snowplow, sentry, intercom, keen, adobe, installtracker, appsee, mobileapptracker, launchkit, firebase, leanplum, appboy, facebook, sensors]
+  
   spec_keys = [:dependency, :source, :source_files, :vendored_libraries, :frameworks, :libraries]
 
   # To make the pod spec API cleaner, subspecs are "iOS/KISSmetrics"
@@ -32,14 +70,19 @@ Pod::Spec.new do |s|
     ss.source_files = ['*.{h,m}', 'Providers/ARAnalyticalProvider.{h,m}', 'Providers/ARAnalyticsProviders.h']
     ss.exclude_files = ['ARDSL.{h,m}']
     ss.private_header_files = 'ARNavigationControllerDelegateProxy.h'
+<<<<<<< HEAD
     ss.ios.deployment_target = '8.0'
     ss.frameworks = 'UIKit'
+=======
+    ss.tvos.deployment_target = '9.0'
+	  ss.ios.deployment_target = '8.0'
+>>>>>>> 888744016bb4f53ad5b652819406645bd21f80c7
   end
 
   s.subspec "DSL" do |ss|
     ss.source_files = ['ARDSL.{h,m}']
     ss.dependency 'RSSwizzle', '~> 0.1.0'
-    ss.dependency 'ReactiveCocoa', '~> 2.0'
+    ss.dependency 'ReactiveObjC', '~> 2.0'
   end
 
   # for the description
