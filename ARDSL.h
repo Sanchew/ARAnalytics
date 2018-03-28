@@ -8,6 +8,7 @@ extern NSString * const ARAnalyticsTrackedScreens;
 extern NSString * const ARAnalyticsClass;
 extern NSString * const ARAnalyticsDetails;
 extern NSString * const ARAnalyticsProperties;
+extern NSString * const ARAnalyticsPropertiesCallback;
 extern NSString * const ARAnalyticsPageName;
 extern NSString * const ARAnalyticsPageNameBlock;
 extern NSString * const ARAnalyticsPageNameKeyPath;
@@ -22,6 +23,13 @@ extern NSString * const ARAnalyticsShouldFire;
  * value type used for the ARAnalyticsProperties key.
  */
 typedef NSDictionary*(^ARAnalyticsPropertiesBlock)(id instance, NSArray *arguments);
+
+/**
+ * Optionally supply an NSDictionary of custom properties at the time a screen view or event is triggered. This is the
+ * value type used for the ARAnalyticsProperties key.
+ * Parameters returned by callbacks.
+ */
+typedef NSDictionary*(^ARAnalyticsPropertiesCallbackBlock)(id instance, NSArray *arguments, void(^callback)(NSDictionary *customProperties));
 /**
  * ARAnalyticsNameBlock is used to dynamically supply a pageName or eventName at the time the screen view or event/action
  * is triggered. This is the value type used for the ARAnalyticsPageNameBlock or ARAnalyticsEventNameBlock keys.

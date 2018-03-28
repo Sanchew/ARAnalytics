@@ -164,6 +164,6 @@
 #endif
 
 
-#ifdef AR_DUMPLINGS_EXISTS
-#import "DumplingsProvider.h"
+#ifdef AR_SENSORS_EXISTS
+#import "SensorsProvider.h"
 #endif

@@ -1,13 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-pod 'ARAnalytics/Intercom', :path => "../"
 pod 'ARAnalytics/DSL', :path => "../"
 
 target :ARAnalyticsBootstrapiOS do
   platform :ios, '9.0'
   
+  pod 'ARAnalytics/Sensors', :path => "../"
   pod 'ARAnalytics/AppsFlyer', :path => "../"
-  pod 'ARAnalytics/DSL', :path => "../"
 end
 
 # target "ARAnalyticsiOSTests" do

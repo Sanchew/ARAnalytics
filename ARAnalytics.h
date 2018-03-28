@@ -79,7 +79,7 @@
 + (void)setupSentryWithID:(NSString *)identifier;
 + (void)setupIntercomWithAppID:(NSString *)identifier apiKey:(NSString *)apiKey;
 + (void)setupKeenWithProjectID:(NSString *)projectId andWriteKey:(NSString *)writeKey andReadKey:(NSString *)readKey;
-+ (void)setupDumplingsWithPID:(NSString *)pid IDFA:(NSString *)idfa;
++ (void)setupSensorsWithServerURL:(NSString *) serverURL;
 
 + (void)setupAdobeWithData:(NSDictionary *)additionalData otherSettings:(NSDictionary *)settings;
 + (void)setupInstallTrackerWithApplicationID:(NSString *)applicationID;
@@ -231,5 +231,4 @@ extern NSString * const ARMobileAppTrackerAdvertiserID;
 extern NSString * const ARMobileAppTrackerConversionKey;
 extern NSString * const ARMobileAppTrackerAllowedEvents;
 extern NSString * const ARLaunchKitAPIToken;
-extern NSString * const ARDumplingsPID;
-extern NSString * const ARDumplingsIDFA;
+extern NSString * const ARSensorsServerURL;

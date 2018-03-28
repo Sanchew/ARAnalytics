@@ -8,6 +8,7 @@ NSString * const ARAnalyticsTrackedScreens = @"trackedScreens";
 NSString * const ARAnalyticsClass = @"class";
 NSString * const ARAnalyticsDetails = @"details";
 NSString * const ARAnalyticsProperties = @"properties";
+NSString * const ARAnalyticsPropertiesCallback = @"propertiesCallback";
 NSString * const ARAnalyticsPageName = @"pageName";
 NSString * const ARAnalyticsPageNameKeyPath = @"keypath";
 NSString * const ARAnalyticsPageNameBlock = @"pageNameBlock";
@@ -76,6 +77,15 @@ ARExtractProperties(id object, NSDictionary *analyticsEntry, RACTuple *parameter
         return propertiesBlock(object, parameters.allObjects);
     }
     return nil;
+}
+
+static void
+ARExtractPropertiesCallback(id object, NSDictionary *analyticsEntry, RACTuple *parameters, void(^callback)(NSDictionary *propertyes))
+{
+    ARAnalyticsPropertiesCallbackBlock propertiesBlock =  analyticsEntry[ARAnalyticsPropertiesCallback];
+    if (propertiesBlock) {
+        propertiesBlock(object, parameters.allObjects, callback);
+    }
 }
 
 static NSString *
@@ -175,6 +185,10 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
                     // `-[ARAnalyticsProvider pageView:]` implementations, so call the right one.
                     if (properties) {
                         [ARAnalytics pageView:pageName withProperties:properties];
+                    } else if (object[ARAnalyticsPropertiesCallback]) {
+                        ARExtractPropertiesCallback(instance, object, parameters, ^(NSDictionary *propertyes) {
+                            [ARAnalytics pageView:pageName withProperties:properties];
+                        });
                     } else {
                         [ARAnalytics pageView:pageName];
                     }

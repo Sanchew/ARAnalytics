@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29B61D5400D08B8C1F19CA5F /* libPods-ARAnalyticsiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A9B7BEB5AF2EE8C6DA4EA7 /* libPods-ARAnalyticsiOSTests.a */; };
 		5E0E7BCF1913D57400DA982C /* ARAnalyticsDSLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0E7BCE1913D57400DA982C /* ARAnalyticsDSLTests.m */; };
 		603AE9F318E1AE49004AEBF8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603AE9F218E1AE49004AEBF8 /* XCTest.framework */; };
 		603AE9F418E1AE49004AEBF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A5E6121698DB4400686918 /* Foundation.framework */; };
@@ -34,7 +33,6 @@
 		60FF26881749771F005F8435 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FF26861749771F005F8435 /* MainMenu.xib */; };
 		60FF268D17498318005F8435 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF268C17498318005F8435 /* Security.framework */; };
 		79239FD55ED2750012FE27A3 /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E35DBF72B638BE973C9049 /* libPods-ARAnalyticsBootstrapiOS.a */; };
-		9C45E7644D654CB2A4940A18 /* libPods-ARAnalyticsiOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 098BAA2082A04DABA4E2599A /* libPods-ARAnalyticsiOSTests.a */; };
 		A2750F25723A4344992E231B /* libPods-ARAnalyticsBootstrapiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA562281B834E738D18B40A /* libPods-ARAnalyticsBootstrapiOS.a */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +48,6 @@
 
 /* Begin PBXFileReference section */
 		098BAA2082A04DABA4E2599A /* libPods-ARAnalyticsiOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsiOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		11CF516674AC2BCFAA067061 /* Pods-ARAnalyticsiOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARAnalyticsiOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARAnalyticsiOSTests/Pods-ARAnalyticsiOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		38E35DBF72B638BE973C9049 /* libPods-ARAnalyticsBootstrapiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA562281B834E738D18B40A /* libPods-ARAnalyticsBootstrapiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ARAnalyticsBootstrapiOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0E7BCE1913D57400DA982C /* ARAnalyticsDSLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAnalyticsDSLTests.m; sourceTree = "<group>"; };
@@ -64,7 +61,7 @@
 		603AEA0518E1AF6D004AEBF8 /* ORStubbedProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORStubbedProvider.m; sourceTree = "<group>"; };
 		603AEA0718E1B5C2004AEBF8 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		603AEA0818E1B631004AEBF8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		60647C711A938F4600A45247 /* ARAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ARAnalytics.podspec; path = ../ARAnalytics.podspec; sourceTree = "<group>"; };
+		60647C711A938F4600A45247 /* ARAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ARAnalytics.podspec; path = ../ARAnalytics.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		60A5E60D1698DB4400686918 /* ARAnalyticsBootstrapiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARAnalyticsBootstrapiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60A5E6101698DB4400686918 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		60A5E6121698DB4400686918 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,8 +107,6 @@
 				603AE9F318E1AE49004AEBF8 /* XCTest.framework in Frameworks */,
 				603AE9F518E1AE49004AEBF8 /* UIKit.framework in Frameworks */,
 				603AE9F418E1AE49004AEBF8 /* Foundation.framework in Frameworks */,
-				9C45E7644D654CB2A4940A18 /* libPods-ARAnalyticsiOSTests.a in Frameworks */,
-				29B61D5400D08B8C1F19CA5F /* libPods-ARAnalyticsiOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,13 +293,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 603AEA0118E1AE49004AEBF8 /* Build configuration list for PBXNativeTarget "ARAnalyticsiOSTests" */;
 			buildPhases = (
-				4CB1B204D91C48519EEF2887 /* [CP] Check Pods Manifest.lock */,
 				603AE9ED18E1AE49004AEBF8 /* Sources */,
 				603AE9EE18E1AE49004AEBF8 /* Frameworks */,
 				603AE9EF18E1AE49004AEBF8 /* Resources */,
-				E4BEF1165C524989BBDA92C0 /* [CP] Copy Pods Resources */,
 				A8FD6CFF3374464C9B2524FB /* Upload Bugsnag dSYM */,
-				520C24B7570F51A1F0E0C2FD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,46 +421,16 @@
 			files = (
 			);
 			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-		};
-		4CB1B204D91C48519EEF2887 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		520C24B7570F51A1F0E0C2FD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ARAnalyticsBootstrapiOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
 		6137A38A286225CF675B10E5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -521,9 +483,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARAnalyticsBootstrapiOS/Pods-ARAnalyticsBootstrapiOS-resources.sh",
+				"${PODS_ROOT}/Intercom/Intercom.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Intercom.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -542,21 +507,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /usr/bin/ruby;
 			shellScript = "\nif ENV[\"DEBUG_INFORMATION_FORMAT\"] != \"dwarf-with-dsym\" or ENV[\"PLATFORM_NAME\"] == \"iphonesimulator\"\n  exit\nend\n\nfork do\n  Process.setsid\n  STDIN.reopen(\"/dev/null\")\n  STDOUT.reopen(\"/dev/null\", \"a\")\n  STDERR.reopen(\"/dev/null\", \"a\")\n\n  require 'shellwords'\n\n  Dir[\"#{ENV[\"DWARF_DSYM_FOLDER_PATH\"]}/#{ENV[\"DWARF_DSYM_FILE_NAME\"]}/Contents/Resources/DWARF/*\"].each do |dsym|\n    system(\"curl -F dsym=@#{Shellwords.escape(dsym)} -F projectRoot=#{Shellwords.escape(ENV[\"PROJECT_DIR\"])} https://upload.bugsnag.com/\")\n  end\nend\n";
-			showEnvVarsInLog = 0;
-		};
-		E4BEF1165C524989BBDA92C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARAnalyticsiOSTests/Pods-ARAnalyticsiOSTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

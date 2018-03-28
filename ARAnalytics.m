@@ -169,8 +169,8 @@ static BOOL _ARLogShouldPrintStdout = YES;
     }
 
 
-    if (analyticsDictionary[ARDumplingsPID] && analyticsDictionary[ARDumplingsIDFA]) {
-        [self setupDumplingsWithPID:analyticsDictionary[ARDumplingsPID] IDFA:analyticsDictionary[ARDumplingsIDFA]];
+    if (analyticsDictionary[ARSensorsServerURL]) {
+        [self setupSensorsWithServerURL:analyticsDictionary[ARSensorsServerURL]];
     }
 
 
@@ -540,10 +540,10 @@ static BOOL _ARLogShouldPrintStdout = YES;
 #endif
 }
 
-+ (void)setupDumplingsWithPID:(NSString *)pid IDFA:(NSString *)idfa 
++ (void)setupSensorsWithServerURL:(NSString *)serverURL
 {
-#ifdef AR_DUMPLINGS_EXISTS
-    DumplingsProvider *provider = [[DumplingsProvider alloc] initWithPID:pid IDFA:idfa];
+#ifdef AR_SENSORS_EXISTS
+    SensorsProvider *provider = [[SensorsProvider alloc] initWithServerURL: serverURL];
     [self setupProvider:provider];
 #endif
 }
@@ -890,5 +890,4 @@ NSString * const ARMobileAppTrackerAdvertiserID = @"ARMobileAppTrackerAdvertiser
 NSString * const ARMobileAppTrackerConversionKey = @"ARMobileAppTrackerConversionKey";
 NSString * const ARMobileAppTrackerAllowedEvents = @"ARMobileAppTrackerAllowedEvents";
 NSString * const ARLaunchKitAPIToken = @"ARLaunchKitAPIToken";
-NSString * const ARDumplingsPID = @"ARDumplingsPID";
-NSString * const ARDumplingsIDFA = @"ARDumplingsIDFA";
+NSString * const ARSensorsServerURL = @"ARSensorsServerURL";
