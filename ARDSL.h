@@ -13,6 +13,7 @@ extern NSString * const ARAnalyticsPageName;
 extern NSString * const ARAnalyticsPageNameBlock;
 extern NSString * const ARAnalyticsPageNameKeyPath;
 extern NSString * const ARAnalyticsEventName;
+extern NSString * const ARAnalyticsEventFactory;
 extern NSString * const ARAnalyticsEventNameBlock;
 extern NSString * const ARAnalyticsSelectorName;
 extern NSString * const ARAnalyticsEventProperties __attribute__((deprecated("Renamed to ARAnalyticsProperties")));
@@ -29,7 +30,7 @@ typedef NSDictionary*(^ARAnalyticsPropertiesBlock)(id instance, NSArray *argumen
  * value type used for the ARAnalyticsProperties key.
  * Parameters returned by callbacks.
  */
-typedef NSDictionary*(^ARAnalyticsPropertiesCallbackBlock)(id instance, NSArray *arguments, void(^callback)(NSDictionary *customProperties));
+typedef void(^ARAnalyticsPropertiesCallbackBlock)(id instance, NSArray *arguments, void(^callback)(NSDictionary *customProperties));
 /**
  * ARAnalyticsNameBlock is used to dynamically supply a pageName or eventName at the time the screen view or event/action
  * is triggered. This is the value type used for the ARAnalyticsPageNameBlock or ARAnalyticsEventNameBlock keys.
@@ -41,6 +42,7 @@ typedef NSString*(^ARAnalyticsNameBlock)(id instance, NSArray *arguments, NSDict
 typedef ARAnalyticsPropertiesBlock ARAnalyticsEventPropertiesBlock __attribute__((deprecated("Renamed to ARAnalyticsPropertiesBlock")));
 
 typedef BOOL(^ARAnalyticsEventShouldFireBlock)(id instance, NSArray *arguments);
+typedef void(^ARAnalyticsEventFactoryBlock)(id instance);
 
 @interface ARAnalytics (DSL)
 

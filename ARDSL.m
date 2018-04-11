@@ -13,6 +13,7 @@ NSString * const ARAnalyticsPageName = @"pageName";
 NSString * const ARAnalyticsPageNameKeyPath = @"keypath";
 NSString * const ARAnalyticsPageNameBlock = @"pageNameBlock";
 NSString * const ARAnalyticsEventName = @"event";
+NSString * const ARAnalyticsEventFactory = @"eventFactory";
 NSString * const ARAnalyticsEventNameBlock = @"eventBlock";
 NSString * const ARAnalyticsSelectorName = @"selector";
 NSString * const ARAnalyticsEventProperties = @"properties";
@@ -110,32 +111,45 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
 
 + (void)addEventAnalyticsHook:(NSDictionary *)eventDictionary {
     Class klass = eventDictionary[ARAnalyticsClass];
-
+    
     RSSwizzleClassMethod(klass, @selector(alloc), RSSWReturnType(id), void, RSSWReplacement({
         id instance = RSSWCallOriginal();
-
+        
         [eventDictionary[ARAnalyticsDetails] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
             SEL selector = ar_selectorForEventAnalyticsDetails(object);
-
-            NSString *event = object[ARAnalyticsEventName];
-
-            __weak __typeof(instance) weakInstance = instance;
-            [[instance rac_signalForSelector:selector] subscribeNext:^(RACTuple *parameters) {
-                id instance = weakInstance;
-
-                BOOL shouldFire = ar_shouldFireForInstance(object, instance, parameters);
-
-                if (shouldFire) {
-                    NSString *eventName = event;
-                    NSDictionary *properties = ARExtractProperties(instance, object, parameters);
-
-                    if (!eventName) {
-                        // if the event name was not set statically, see if it's available via the block parameter
-                        eventName = ARExtractEventName(instance, object, parameters, properties);
-                    }
-                    [ARAnalytics event:eventName withProperties:properties];
+            
+            if (object[ARAnalyticsEventFactory]) {
+                ARAnalyticsEventFactoryBlock block = object[ARAnalyticsEventFactory];
+                if (block) {
+                    block(instance);
                 }
-            }];
+            }else {
+                NSString *event = object[ARAnalyticsEventName];
+                
+                __weak __typeof(instance) weakInstance = instance;
+                [[instance rac_signalForSelector:selector] subscribeNext:^(RACTuple *parameters) {
+                    id instance = weakInstance;
+                    
+                    BOOL shouldFire = ar_shouldFireForInstance(object, instance, parameters);
+
+                    if (shouldFire) {
+                        NSString *eventName = event;
+                        NSDictionary *properties = ARExtractProperties(instance, object, parameters);
+
+                        if (!eventName) {
+                            // if the event name was not set statically, see if it's available via the block parameter
+                            eventName = ARExtractEventName(instance, object, parameters, properties);
+                        }
+                        if (object[ARAnalyticsPropertiesCallback]) {
+                            ARExtractPropertiesCallback(instance, object, parameters, ^(NSDictionary *propertyes) {
+                                [ARAnalytics event:eventName withProperties:properties];
+                            });
+                        }else {
+                            [ARAnalytics event:eventName withProperties:properties];
+                        }
+                    }
+                }];
+            }
         }];
 
         return instance;
@@ -144,13 +158,12 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
 
 + (void)addScreenMonitoringAnalyticsHook:(NSDictionary *)screenDictionary {
     Class klass = screenDictionary[ARAnalyticsClass];
-
+    
     RSSwizzleClassMethod(klass, @selector(alloc), RSSWReturnType(id), void, RSSWReplacement({
         id instance = RSSWCallOriginal();
-
+        
         [screenDictionary[ARAnalyticsDetails] enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
             SEL selector = ar_selectorForScreenAnalyticsDetails(object, klass);
-
             // Try to grab the page name from the dictionary.
             NSString *dictionaryPageName = object[ARAnalyticsPageName];
 
@@ -160,6 +173,7 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
             __weak __typeof(instance) weakInstance = instance;
             [[instance rac_signalForSelector:selector] subscribeNext:^(RACTuple *parameters) {
                 id instance = weakInstance;
+                
                 if (instance == nil) {
                     return;
                 }
@@ -186,8 +200,12 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
                     if (properties) {
                         [ARAnalytics pageView:pageName withProperties:properties];
                     } else if (object[ARAnalyticsPropertiesCallback]) {
-                        ARExtractPropertiesCallback(instance, object, parameters, ^(NSDictionary *propertyes) {
-                            [ARAnalytics pageView:pageName withProperties:properties];
+                        ARExtractPropertiesCallback(instance, object, parameters, ^(NSDictionary *properties) {
+                            NSString * pn = pageName;
+                            if (properties[ARAnalyticsPageName]) {
+                                pn = properties[ARAnalyticsPageName];
+                            }
+                            [ARAnalytics pageView:pn withProperties:properties];
                         });
                     } else {
                         [ARAnalytics pageView:pageName];

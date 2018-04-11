@@ -6,7 +6,7 @@
 #ifdef AR_SENSORS_EXISTS
 
 - (instancetype)initWithIdentifier:(NSString *)identifier {
-    NSLog(@"Use -[AppsFlyerProvider initWithAppID:devKey:] instead of %s", __PRETTY_FUNCTION__);
+    NSLog(@"Use -[Sensors initWithServerURL:] instead of %s", __PRETTY_FUNCTION__);
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
@@ -14,10 +14,10 @@
 - (instancetype)initWithServerURL:(NSString *)serverURL {
     self = [super init];
     if (!self) return nil;
-
-    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL
-                                        andDebugMode:SensorsAnalyticsDebugOff];
-
+    
+    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugOnly];
+//    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugOff];
+    [[SensorsAnalyticsSDK sharedInstance] enableAutoTrack: SensorsAnalyticsEventTypeAppStart | SensorsAnalyticsEventTypeAppEnd];
     return self;
 }
 
@@ -27,7 +27,15 @@
     }
 }
 
+- (void)didShowNewPageView:(NSString *)pageTitle withProperties:(NSDictionary *)properties {
+    
+    NSLog(@">>> page  %@",pageTitle);
+    [[SensorsAnalyticsSDK sharedInstance] trackViewScreen:pageTitle withProperties:properties];
+}
+
 - (void)event:(NSString *)event withProperties:(NSDictionary *)properties {
+    
+    NSLog(@">>> event %@",event);
     
     NSMutableDictionary *props = [[NSMutableDictionary alloc] initWithDictionary:properties];
 
