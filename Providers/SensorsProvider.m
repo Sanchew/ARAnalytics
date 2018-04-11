@@ -28,14 +28,10 @@
 }
 
 - (void)didShowNewPageView:(NSString *)pageTitle withProperties:(NSDictionary *)properties {
-    
-    NSLog(@">>> page  %@",pageTitle);
     [[SensorsAnalyticsSDK sharedInstance] trackViewScreen:pageTitle withProperties:properties];
 }
 
 - (void)event:(NSString *)event withProperties:(NSDictionary *)properties {
-    
-    NSLog(@">>> event %@",event);
     
     NSMutableDictionary *props = [[NSMutableDictionary alloc] initWithDictionary:properties];
 
