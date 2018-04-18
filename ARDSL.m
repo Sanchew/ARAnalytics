@@ -111,7 +111,7 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
 
 + (void)addEventAnalyticsHook:(NSDictionary *)eventDictionary {
     Class klass = eventDictionary[ARAnalyticsClass];
-    
+    id origSelf = self;
     RSSwizzleClassMethod(klass, @selector(alloc), RSSWReturnType(id), void, RSSWReplacement({
         id instance = RSSWCallOriginal();
         
@@ -142,10 +142,10 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
                         }
                         if (object[ARAnalyticsPropertiesCallback]) {
                             ARExtractPropertiesCallback(instance, object, parameters, ^(NSDictionary *propertyes) {
-                                [ARAnalytics event:eventName withProperties:properties];
+                                [origSelf event:eventName withProperties:properties];
                             });
                         }else {
-                            [ARAnalytics event:eventName withProperties:properties];
+                            [origSelf event:eventName withProperties:properties];
                         }
                     }
                 }];
@@ -158,7 +158,7 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
 
 + (void)addScreenMonitoringAnalyticsHook:(NSDictionary *)screenDictionary {
     Class klass = screenDictionary[ARAnalyticsClass];
-    
+    id origSelf = self;
     RSSwizzleClassMethod(klass, @selector(alloc), RSSWReturnType(id), void, RSSWReplacement({
         id instance = RSSWCallOriginal();
         
@@ -205,10 +205,10 @@ ARExtractEventName(id object, NSDictionary *analyticsEntry, RACTuple *parameters
                             if (properties[ARAnalyticsPageName]) {
                                 pn = properties[ARAnalyticsPageName];
                             }
-                            [ARAnalytics pageView:pn withProperties:properties];
+                            [origSelf pageView:pn withProperties:properties];
                         });
                     } else {
-                        [ARAnalytics pageView:pageName];
+                        [origSelf pageView:pageName];
                     }
                 }
             }];
