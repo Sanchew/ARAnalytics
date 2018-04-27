@@ -15,8 +15,9 @@
     self = [super init];
     if (!self) return nil;
     
-    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugAndTrack];
-//    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugOff];
+//    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugAndTrack];
+    [SensorsAnalyticsSDK sharedInstanceWithServerURL:serverURL andDebugMode:SensorsAnalyticsDebugOff];
+    [[SensorsAnalyticsSDK sharedInstance] trackInstallation: @"AppInstall"];
     [[SensorsAnalyticsSDK sharedInstance] enableAutoTrack: SensorsAnalyticsEventTypeAppStart | SensorsAnalyticsEventTypeAppEnd];
     return self;
 }
