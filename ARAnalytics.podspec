@@ -59,7 +59,7 @@ Pod::Spec.new do |s|
   parseAnalytics_mac = { :spec_name => "ParseAnalyticsOSX", :dependency => "Parse",             :osx => true,  :provider => "ParseAnalytics", :has_extension => true }
 
   facebook          = { :spec_name => "Facebook", :dependency => "FBSDKCoreKit" }
-  sensors          = { :spec_name => "Sensors",         :dependency => "SensorsAnalyticsSDK/IDFA",	:frameworks => ['AdSupport']  }
+  sensors          = { :spec_name => "Sensors",         :dependency => "SensorsAnalyticsSDK/IDFA",	:frameworks => ['AdSupport'],  :subspecs => ['DISABLE_TRACK_GPS']  }
 
   all_analytics = [facebook, mixpanel, localytics, flurry, google, kissmetrics, crittercism, crashlytics, fabric, bugsnag, countly, helpshift, kissmetrics_mac, mixpanel_mac, tapstream, newRelic, amplitude, hockeyApp, hockeyAppLib, hockeyApp_mac, parseAnalytics, parseAnalytics_mac, heap, chartbeat, umeng, librato, segmentio, swrve, yandex, adjust, appsflyer, branch, snowplow, sentry, intercom, keen, adobe, installtracker, appsee, mobileapptracker, launchkit, firebase, leanplum, appboy, facebook, sensors]
 
@@ -129,6 +129,10 @@ Pod::Spec.new do |s|
 
       if analytics_spec[:source]
         ss.source = analytics_spec[:source]
+      end
+
+      if analytics_spec[:subspecs]
+        ss.subspecs = analytics_spec[:subspecs]
       end
 
       if analytics_spec[:source_files]
